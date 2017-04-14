@@ -4,6 +4,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
 
 bin_PROGRAMS = XZeroConf
 
-XZeroConf_SOURCES = main.cpp
+XZeroConf_SOURCES = main.cpp \
+					service.cpp
 
 XZeroConf_LDADD = -lpthread
