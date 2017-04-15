@@ -41,6 +41,7 @@ flags = [
     '-I./examples',
     '-I./src',
     '-I./tests',
+    '-I./third_party',
     '-std=c++11',
 ]
 
