@@ -1,7 +1,8 @@
-#include "test_xzeroconf.h"
+#include "catch.hpp"
+
 #include "service.h"
 
-using namespace xzc;
+namespace xzc {
 
 SCENARIO("test service", "[service]") {
     Service service("service", "_http._tcp");
@@ -17,12 +18,16 @@ SCENARIO("test service", "[service]") {
 
     WHEN("set name") {
         service.SetName("new name");
-        THEN("name changed") { REQUIRE(service.GetName() == "new name"); }
+        THEN("name changed") {
+            REQUIRE(service.GetName() == "new name");
+        }
     }
 
     WHEN("set type") {
         service.SetType("_ipp._tcp");
-        THEN("type changed") { REQUIRE(service.GetType() == "_ipp._tcp"); }
+        THEN("type changed") {
+            REQUIRE(service.GetType() == "_ipp._tcp");
+        }
     }
 
     WHEN("add txt record") {
@@ -38,7 +43,9 @@ SCENARIO("test service", "[service]") {
 
     WHEN("set domain") {
         service.SetDomain("local");
-        THEN("domain is setted") { REQUIRE(service.GetDomain() == "local"); }
+        THEN("domain is setted") {
+            REQUIRE(service.GetDomain() == "local");
+        }
     }
 
     WHEN("set subtype") {
@@ -50,7 +57,9 @@ SCENARIO("test service", "[service]") {
 
     WHEN("set interface") {
         service.SetInterface(1);
-        THEN("interface is setted") { REQUIRE(service.GetInterface() == 1); }
+        THEN("interface is setted") {
+            REQUIRE(service.GetInterface() == 1);
+        }
     }
 
     WHEN("set protocol") {
@@ -60,3 +69,5 @@ SCENARIO("test service", "[service]") {
         }
     }
 }
+
+}  // xzc

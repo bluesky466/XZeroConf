@@ -8,33 +8,59 @@ Service::Service(const string& name, const string& type)
         : name_(name),
           type_(type),
           interface_(0),
-          protocol_(Protocol::kNoSpec) {}
+          protocol_(Protocol::kNoSpec) {
+}
 
-Service::~Service() {}
+Service::~Service() {
+}
 
-void Service::SetName(const string& name) { name_ = name; }
+void Service::SetName(const string& name) {
+    name_ = name;
+}
 
-const string& Service::GetName() const { return name_; }
+const string& Service::GetName() const {
+    return name_;
+}
 
-void Service::SetType(const string& type) { type_ = type; }
+void Service::SetType(const string& type) {
+    type_ = type;
+}
 
-const string& Service::GetType() const { return type_; }
+const string& Service::GetType() const {
+    return type_;
+}
 
-void Service::SetDomain(const string& domain) { domain_ = domain; }
+void Service::SetDomain(const string& domain) {
+    domain_ = domain;
+}
 
-const string& Service::GetDomain() const { return domain_; }
+const string& Service::GetDomain() const {
+    return domain_;
+}
 
-void Service::SetSubType(const string& subtype) { subtype_ = subtype; }
+void Service::SetSubType(const string& subtype) {
+    subtype_ = subtype;
+}
 
-const string& Service::GetSubType() const { return subtype_; }
+const string& Service::GetSubType() const {
+    return subtype_;
+}
 
-void Service::SetInterface(int interface) { interface_ = interface; }
+void Service::SetInterface(int interface) {
+    interface_ = interface;
+}
 
-int Service::GetInterface() const { return interface_; }
+int Service::GetInterface() const {
+    return interface_;
+}
 
-void Service::SetProtocol(Protocol protocol) { protocol_ = protocol; }
+void Service::SetProtocol(Protocol protocol) {
+    protocol_ = protocol;
+}
 
-Protocol Service::GetProtocol() const { return protocol_; }
+Protocol Service::GetProtocol() const {
+    return protocol_;
+}
 
 void Service::SetTXTRecord(const string& key, const string& value) {
     txt_[key] = value;
@@ -45,6 +71,8 @@ string Service::GetTXTRecord(const string& key) const {
     return it != txt_.end() ? it->second : "";
 }
 
-const TXT& Service::GetTXT() const { return txt_; }
+const TXT& Service::GetTXT() const {
+    return txt_;
+}
 
 }  // xzc

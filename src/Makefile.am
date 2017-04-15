@@ -5,6 +5,10 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
 bin_PROGRAMS = XZeroConf
 
 XZeroConf_SOURCES = main.cpp \
-					service.cpp
+					service.cpp \
+					avahi_publisher.cpp
 
-XZeroConf_LDADD = -lpthread
+XZeroConf_LDADD = -lpthread \
+				  -lavahi-client \
+				  -lavahi-common
+

@@ -14,5 +14,5 @@ enum class Protocol {
     kIPv6 = 2,
 };
 
-} // xzc
+}  // xzc
 #endif  // XZEROCONF_DEFINE_H_
