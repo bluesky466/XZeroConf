@@ -43,6 +43,8 @@ public:
 
     const TXT& GetTXT() const;
 
+    bool operator==(const Service& rhs) const;
+
 private:
     std::string name_;
     std::string type_;

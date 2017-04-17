@@ -68,6 +68,20 @@ SCENARIO("test service", "[service]") {
             REQUIRE(service.GetProtocol() == Protocol::kIPv6);
         }
     }
+
+	WHEN("compare two services with the same name") {
+    	Service service_cmp("service", "_http._tcp");
+		THEN("tow services equal") {
+			REQUIRE(service == service_cmp);
+		}
+	}
+
+	WHEN("compare two services with the different name") {
+    	Service service_cmp("other service", "_http._tcp");
+		THEN("tow services equal") {
+			REQUIRE_FALSE(service == service_cmp);
+		}
+	}
 }
 
 }  // xzc

@@ -14,65 +14,68 @@ Service::Service(const string& name, const string& type)
 Service::~Service() {
 }
 
-void Service::SetName(const string& name) {
+inline void Service::SetName(const string& name) {
     name_ = name;
 }
 
-const string& Service::GetName() const {
+inline const string& Service::GetName() const {
     return name_;
 }
 
-void Service::SetType(const string& type) {
+inline void Service::SetType(const string& type) {
     type_ = type;
 }
 
-const string& Service::GetType() const {
+inline const string& Service::GetType() const {
     return type_;
 }
 
-void Service::SetDomain(const string& domain) {
+inline void Service::SetDomain(const string& domain) {
     domain_ = domain;
 }
 
-const string& Service::GetDomain() const {
+inline const string& Service::GetDomain() const {
     return domain_;
 }
 
-void Service::SetSubType(const string& subtype) {
+inline void Service::SetSubType(const string& subtype) {
     subtype_ = subtype;
 }
 
-const string& Service::GetSubType() const {
+inline const string& Service::GetSubType() const {
     return subtype_;
 }
 
-void Service::SetInterface(int interface) {
+inline void Service::SetInterface(int interface) {
     interface_ = interface;
 }
 
-int Service::GetInterface() const {
+inline int Service::GetInterface() const {
     return interface_;
 }
 
-void Service::SetProtocol(Protocol protocol) {
+inline void Service::SetProtocol(Protocol protocol) {
     protocol_ = protocol;
 }
 
-Protocol Service::GetProtocol() const {
+inline Protocol Service::GetProtocol() const {
     return protocol_;
 }
 
-void Service::SetTXTRecord(const string& key, const string& value) {
+inline void Service::SetTXTRecord(const string& key, const string& value) {
     txt_[key] = value;
 }
 
-string Service::GetTXTRecord(const string& key) const {
+inline string Service::GetTXTRecord(const string& key) const {
     auto it = txt_.find(key);
     return it != txt_.end() ? it->second : "";
 }
 
-const TXT& Service::GetTXT() const {
+inline const TXT& Service::GetTXT() const {
     return txt_;
 }
 
+inline bool Service::operator==(const Service& rhs) const {
+    return GetName() == rhs.GetName();
+}
 }  // xzc
