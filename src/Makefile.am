@@ -6,7 +6,9 @@ bin_PROGRAMS = XZeroConf
 
 XZeroConf_SOURCES = main.cpp \
 					service.cpp \
-					avahi_publisher.cpp
+					publish_service_entry.cpp \
+					stub_publish_service_entry.cpp \
+					stub_publish_server_entry.cpp
 
 XZeroConf_LDADD = -lpthread \
 				  -lavahi-client \

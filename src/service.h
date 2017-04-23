@@ -9,6 +9,8 @@ namespace xzc {
 
 class Service {
 public:
+	Service();
+
     Service(const std::string& name, const std::string& type);
 
     ~Service();
