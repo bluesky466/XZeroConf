@@ -10,7 +10,7 @@ public:
                             const PublishCallback& on_success,
                             const PublishCallback& on_error);
 
-    virtual void StopPublished();
+    virtual bool StopPublished();
 };
 }  // xzc
 

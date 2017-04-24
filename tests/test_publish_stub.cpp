@@ -20,8 +20,8 @@ SCENARIO("test publish stub", "[publish-stub]") {
         service_entry = entry;
     };
 
-    bool is_on_publised = false;
-    auto on_success = [&](const Service& service) { is_on_publised = true; };
+    bool is_on_success = false;
+    auto on_success = [&](const Service& service) { is_on_success = true; };
 
     bool is_on_error = false;
     auto on_error = [&](const Service& service) { is_on_error = true; };
@@ -34,10 +34,10 @@ SCENARIO("test publish stub", "[publish-stub]") {
         WHEN("publish service") {
             entry.PublishService(service, on_result, on_success, on_error);
 
-            THEN("call callback func") {
+            THEN("publish successfully") {
                 REQUIRE(service_entry != nullptr);
                 REQUIRE(service_entry->IsPublished());
-                REQUIRE(is_on_publised);
+                REQUIRE(is_on_success);
                 REQUIRE_FALSE(is_on_error);
             }
         }
@@ -49,10 +49,10 @@ SCENARIO("test publish stub", "[publish-stub]") {
         WHEN("publish service") {
             entry.PublishService(service, on_result, on_success, on_error);
 
-            THEN("publish failed") {
+            THEN("publish unsuccessfully") {
                 REQUIRE(service_entry != nullptr);
                 REQUIRE_FALSE(service_entry->IsPublished());
-                REQUIRE_FALSE(is_on_publised);
+                REQUIRE_FALSE(is_on_success);
                 REQUIRE(is_on_error);
             }
         }

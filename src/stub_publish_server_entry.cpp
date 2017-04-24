@@ -1,5 +1,4 @@
 #include "stub_publish_server_entry.h"
-
 #include "stub_publish_service_entry.h"
 
 namespace xzc {

@@ -7,7 +7,8 @@ StubPublishServiceEntry::StubPublishServiceEntry(
         : PublishServiceEntry(service, callback, on_success, on_error) {
 }
 
-void StubPublishServiceEntry::StopPublished() {
+bool StubPublishServiceEntry::StopPublished() {
     SetPublishFinished(false);
+	return true;
 }
 }  // xzc

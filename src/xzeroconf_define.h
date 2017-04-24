@@ -3,6 +3,7 @@
 
 #include <map>
 #include <string>
+#include <functional>
 
 namespace xzc {
 
@@ -13,6 +14,9 @@ enum class Protocol {
     kIPv4 = 1,
     kIPv6 = 2,
 };
+
+class Service;
+typedef std::function<void(const Service&)> PublishCallback;
 
 }  // xzc
 #endif  // XZEROCONF_DEFINE_H_

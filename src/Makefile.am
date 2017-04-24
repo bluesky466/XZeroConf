@@ -8,7 +8,8 @@ XZeroConf_SOURCES = main.cpp \
 					service.cpp \
 					publish_service_entry.cpp \
 					stub_publish_service_entry.cpp \
-					stub_publish_server_entry.cpp
+					stub_publish_server_entry.cpp \
+					publish_server.cpp
 
 XZeroConf_LDADD = -lpthread \
 				  -lavahi-client \

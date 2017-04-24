@@ -7,8 +7,6 @@
 
 namespace xzc {
 
-typedef std::function<void(const Service&)> PublishCallback;
-
 class PublishServiceEntry {
 public:
     typedef std::function<void(PublishServiceEntry*)> Callback;
@@ -30,7 +28,7 @@ public:
 
     const Service& GetService() const;
 
-    virtual void StopPublished() = 0;
+    virtual bool StopPublished() = 0;
 
 private:
     bool is_published_;
