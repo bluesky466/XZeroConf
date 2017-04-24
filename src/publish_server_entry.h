@@ -17,6 +17,10 @@ public:
                         const PublishServiceEntry::Callback& callback,
                         const PublishCallback& on_success,
                         const PublishCallback& on_error) = 0;
+
+	virtual void Start() = 0;
+
+	virtual void Stop() = 0;
 };
 
 }  // xzc

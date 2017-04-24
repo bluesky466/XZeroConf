@@ -14,6 +14,14 @@ PublishServer::PublishServer(shared_ptr<PublishServerEntry> entry)
           publish_callback_(bind(&PublishServer::OnPublishFinish, this, _1)) {
 }
 
+void PublishServer::Start() {
+    entry_->Start();
+}
+
+void PublishServer::Stop() {
+    entry_->Stop();
+}
+
 void PublishServer::PublishService(const Service& service,
                                    const PublishCallback& on_success,
                                    const PublishCallback& on_error) {
@@ -21,18 +29,18 @@ void PublishServer::PublishService(const Service& service,
 }
 
 bool PublishServer::StopPublished(const Service& service) {
-	auto it = service_entrys_.find(service.GetName());
-	if(it == service_entrys_.end()) {
-		return false;
-	}
+    auto it = service_entrys_.find(service.GetName());
+    if (it == service_entrys_.end()) {
+        return false;
+    }
 
-	if(!it->second->StopPublished()) {
-		return false;
-	}
+    if (!it->second->StopPublished()) {
+        return false;
+    }
 
-	services_.erase(service.GetName());
-	service_entrys_.erase(it);
-	return true;
+    services_.erase(service.GetName());
+    service_entrys_.erase(it);
+    return true;
 }
 
 map<string, Service> PublishServer::GetServices() const {

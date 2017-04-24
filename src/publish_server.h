@@ -14,6 +14,10 @@ class PublishServer {
 public:
     PublishServer(std::shared_ptr<PublishServerEntry> entry);
 
+	void Start();
+
+	void Stop();
+
     void PublishService(const Service& service,
                         const PublishCallback& on_success,
                         const PublishCallback& on_error);

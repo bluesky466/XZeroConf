@@ -5,6 +5,7 @@
 #include "service.h"
 
 using std::make_shared;
+
 using xzc::Service;
 using xzc::PublishServer;
 using xzc::StubPublishServerEntry;
@@ -20,6 +21,7 @@ SCENARIO("test publish server", "[publish-server]") {
 
     GIVEN("a publish server with enable stub publish entry") {
         PublishServer server(make_shared<StubPublishServerEntry>(true));
+		server.Start();
 
         WHEN("publish a service") {
             server.PublishService(service, on_success, on_error);
@@ -39,6 +41,7 @@ SCENARIO("test publish server", "[publish-server]") {
 
     GIVEN("a publish server with disable stub publish entry") {
         PublishServer server(make_shared<StubPublishServerEntry>(false));
+		server.Start();
 
         WHEN("publish a service") {
             server.PublishService(service, on_success, on_error);
@@ -57,6 +60,7 @@ SCENARIO("test publish server", "[publish-server]") {
 
 	GIVEN("a published service") {
         PublishServer server(make_shared<StubPublishServerEntry>(true));
+		server.Start();
         server.PublishService(service, on_success, on_error);
 
 		THEN("stop publish") {
