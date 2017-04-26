@@ -77,9 +77,13 @@ SCENARIO("test service", "[service]") {
 	}
 
 	WHEN("compare two services with the different name") {
-    	Service service_cmp("other service", "_http._tcp");
+    	Service service_cmp1("service", "_http._tcp");
+    	Service service_cmp2("service", "_ipp._tcp");
+    	Service service_cmp3("other service", "_http._tcp");
 		THEN("tow services equal") {
-			REQUIRE_FALSE(service == service_cmp);
+			REQUIRE(service == service_cmp1);
+			REQUIRE_FALSE(service == service_cmp2);
+			REQUIRE_FALSE(service == service_cmp3);
 		}
 	}
 }

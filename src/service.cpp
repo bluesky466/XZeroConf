@@ -80,6 +80,6 @@ const TXT& Service::GetTXT() const {
 }
 
 bool Service::operator==(const Service& rhs) const {
-    return GetName() == rhs.GetName();
+    return GetName() == rhs.GetName() && GetType()==rhs.GetType();
 }
 }  // xzc
