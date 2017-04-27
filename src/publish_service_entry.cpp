@@ -12,6 +12,9 @@ PublishServiceEntry::PublishServiceEntry(const Service& service,
           on_error_(on_error) {
 }
 
+PublishServiceEntry::~PublishServiceEntry() {
+}
+
 bool PublishServiceEntry::IsPublished() const {
     return is_published_;
 }

@@ -14,13 +14,16 @@ public:
 
 public:
     virtual void PublishService(const Service& service,
-                        const PublishServiceEntry::Callback& callback,
-                        const PublishCallback& on_success,
-                        const PublishCallback& on_error) = 0;
+                                const PublishServiceEntry::Callback& callback,
+                                const PublishCallback& on_success,
+                                const PublishCallback& on_error) = 0;
 
-	virtual void Start() = 0;
+    virtual ~PublishServerEntry() {
+    }
 
-	virtual void Stop() = 0;
+    virtual void Start() = 0;
+
+    virtual void Stop() = 0;
 };
 
 }  // xzc

@@ -16,6 +16,8 @@ public:
                         const PublishCallback& on_success,
                         const PublishCallback& on_error);
 
+	virtual ~PublishServiceEntry();
+
     bool IsPublished() const;
 
     void SetPublishFinished(bool is_published);
