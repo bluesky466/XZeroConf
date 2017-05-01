@@ -42,6 +42,14 @@ const string& Service::GetDomain() const {
     return domain_;
 }
 
+void Service::SetHost(const string& host) {
+	host_ = host;
+}
+
+const string& Service::GetHost() const {
+	return host_;
+}
+
 void Service::SetSubType(const string& subtype) {
     subtype_ = subtype;
 }
@@ -56,6 +64,14 @@ void Service::SetInterface(int interface) {
 
 int Service::GetInterface() const {
     return interface_;
+}
+
+void Service::SetPort(int port) {
+	port_ = port;
+}
+
+int Service::GetPort()const {
+	return port_;
 }
 
 void Service::SetProtocol(Protocol protocol) {

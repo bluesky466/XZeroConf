@@ -9,7 +9,7 @@ namespace xzc {
 
 class Service {
 public:
-	Service();
+    Service();
 
     Service(const std::string& name, const std::string& type);
 
@@ -27,9 +27,17 @@ public:
 
     const std::string& GetDomain() const;
 
+    void SetHost(const std::string& host);
+
+    const std::string& GetHost() const;
+
     void SetSubType(const std::string& subtype);
 
     const std::string& GetSubType() const;
+
+    void SetPort(int port);
+
+    int GetPort() const;
 
     void SetInterface(int interface);
 
@@ -51,7 +59,9 @@ private:
     std::string name_;
     std::string type_;
     std::string domain_;
+    std::string host_;
     std::string subtype_;
+	int port_;
     int interface_;
     Protocol protocol_;
     TXT txt_;

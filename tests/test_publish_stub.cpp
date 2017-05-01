@@ -28,7 +28,7 @@ SCENARIO("test publish stub", "[publish-stub]") {
 
     Service service("service", "_http._tcp");
 
-    GIVEN("a enable publish server entry") {
+    GIVEN("a enable stub publish server entry") {
         StubPublishServerEntry entry(true);
 		entry.Start();
 
@@ -44,7 +44,7 @@ SCENARIO("test publish stub", "[publish-stub]") {
         }
     }
 
-    GIVEN("a disable publish server entry") {
+    GIVEN("a disable stub publish server entry") {
         StubPublishServerEntry entry(false);
 		entry.Start();
 
@@ -60,7 +60,7 @@ SCENARIO("test publish stub", "[publish-stub]") {
         }
     }
 
-    GIVEN("a publish server with a published service") {
+    GIVEN("a stub publish server with a published service") {
         StubPublishServerEntry entry(false);
 		entry.Start();
         entry.PublishService(service, on_result, on_success, on_error);

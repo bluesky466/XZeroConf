@@ -9,6 +9,8 @@ XZeroConf_SOURCES = main.cpp \
 					publish_service_entry.cpp \
 					stub_publish_service_entry.cpp \
 					stub_publish_server_entry.cpp \
+					avahi_publish_server_entry.cpp \
+					avahi_publish_service_entry.cpp \
 					publish_server.cpp
 
 XZeroConf_LDADD = -lpthread \
